@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="title-container">
+    <span>Your Diary</span>
+    <mat-icon svgIcon="arrow" style="height: 24px"></mat-icon>
+  </div>
+  <div class="text-container">
+    <textarea contentEditable="true"  placeholder="Write something" style="padding: 5px" [(ngModel)]="text" type="text"></textarea>
+  </div>
+  <div class="emoji-container">
+    <emoji-mart *ngIf="emojiVisible" class="emoji-mart" [style]="{width: '100%'}" (emojiSelect)="addEmoji($event)" title="Choose your emoji"></emoji-mart>
+  </div>
+  <div class="button-container">
+    <mat-icon [svgIcon]="currentIcon" style="height: 24px" (click)="toggleEmoji()"></mat-icon>
+    <button mat-flat-button color="primary" (click)="save()" >Save</button>
+  </div>
+  <div>
+    <app-list></app-list>
+  </div>
+</div>
+

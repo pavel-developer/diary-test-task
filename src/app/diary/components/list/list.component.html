@@ -1,0 +1,18 @@
+<ng-container *ngFor="let card of cards;">
+  <mat-card class="card">
+    <div class="header-container">
+      <div class="date-container">
+        <mat-icon svgIcon="calendar" style="height: 14px"></mat-icon>
+        <span class="date">{{card.timestamp | custom_date}}</span>
+      </div>
+      <div class="date-container">
+        <mat-icon svgIcon="more" style="height: 14px"></mat-icon>
+      </div>
+    </div>
+    <mat-card-content>
+      <p>
+        {{card.content}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
